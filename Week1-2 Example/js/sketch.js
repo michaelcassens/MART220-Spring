@@ -8,8 +8,14 @@ var g=0;
 var b=0;
 var timer = 0;
 
+var mX = 0;
+var mY = 0;
+
+var squareX = 0;
+var squareY = 0;
+
 function setup() {
-    createCanvas(800, 600);
+    createCanvas(displayWidth, displayHeight);
     speedX = random(1, 10);
     speedY = random(1, 10);
     
@@ -31,7 +37,7 @@ function draw() {
     
     fill(r, g, b);
     circle(x, y, size);
-    square(100, 100, 20);
+    square(squareX, squareY, 20);
     // x = x + 10;
     if (x >= 800 ) {
         // hey at some point I want this to be in just one place
@@ -67,10 +73,41 @@ function draw() {
 
   
     textSize(24);
-    text(x, 400, 400);
+    
+    //text(mY, 450, 400);
+    
     doSomethingNow(300, 300, 105);
+
+    moveSquare();
+
+    // print out the mouse coordinates
+    text("coordinates: " + mX + ":" + mY, 400, 400);
+
 }
 
+function moveSquare()
+{
+    if(keyIsPressed)
+    {
+      if(key == 'a')
+      {
+          squareX-=5;
+      }
+  
+      else if(key == 'd')
+      {
+        squareX+=5;
+      }
+      else if(key == 'w')
+      {
+        squareY-=5;
+      }
+      else if(key == 's')
+      {
+        squareY+=5;
+      }
+    }
+}
 function doSomethingNow(x, y, size) {
     fill(100, 200, 20);
     circle(x, y, size);
@@ -90,3 +127,8 @@ function changeColor()
        print(r);
     }
 }
+
+function mouseMoved() {
+    mX = mouseX;
+    mY = mouseY;
+ }
