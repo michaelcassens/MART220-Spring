@@ -18,10 +18,15 @@ var fishX = 0, fishY = 0;
 
 var img;
 
+// array to hold all the images
 var fish = [];
+// array to hold all the image X's
 var fishXs = [];
+// array to hold all the image Y's
 var fishYs = [];
+// array to hold all the image speed X's
 var swimSpeedXs = [];
+// array to hold all the image speed Y's
 var swimSpeedYs = [];
 
 var fishSize = 50;
@@ -33,9 +38,11 @@ function setup() {
     createCanvas(displayWidth, displayHeight);
     speedX = random(1, 10);
     speedY = random(1, 10);
+    
     var h = window.displayHeight;
     var w = window.displayWidth;
-    console.log(h);
+    // this for loop creates the fish, the x location
+    // the y location, and the speeds
     for(var i = 0; i < fishSize; i++)
     {
         fish[i] = img;
@@ -64,6 +71,7 @@ function draw() {
     
     background(120);
     
+    // this for loop displays the fish and moves the fish each frame
     for(var i = 0; i < fish.length; i++)
     {
         
