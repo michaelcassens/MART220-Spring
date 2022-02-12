@@ -1,112 +1,78 @@
-var fish = [];
-var fishX = [];
-//var fishX = 0;
-var fishY = [];
-var fishImg;
+var x = [];
+var movement = 10.0;
+var initialX = 100;
+// global variables
+var r;
+var g;
+var b;
+var myImages = [];
+var x = 100;
 
-var tPain = [];
-var tPainX = [];
-//var tPainX = 0;
-var tPainY = [];
-var tPainImg;
-var timerValue = 5;
-
-/// create a variable
-var showImages = true;
-
-
-/// make a timer
-
+var img;
 function preload()
 {
-    fishImg = loadImage("./assets/fish.jpg");
-    tPainImg = loadImage("./assets/Thwomp.png");
+    img = loadImage("./assets/fish.jpg");
+    myImages[0] = img;
+    img = loadImage("./assets/Thwomp.png");
+    myImages[1] = img;
+
 }
+function setup()
+{
+    createCanvas(displayWidth-25, displayHeight-140);
+   
 
-function windowResized() {
-    resizeCanvas(windowWidth - 20, windowHeight - 20);
-}
-
-function setup() {
-    createCanvas(windowWidth - 20, windowHeight - 20);
-    for(var i = 0; i < 2; i++)
-    {   
-        fishX[0] = random(windowWidth-100);
-        tPainX[0] = random(windowWidth-100)
-        fishX[1] = random(windowWidth-100);
-        tPainX[1] = random(windowWidth-100)
-    }
-    setInterval(timeIt, 1000);
-    //tPainX = random(windowWidth-100);
-}
-
-
-function draw() {
-
-   background(120);
-    textSize(50);
-    text(timerValue, 100,100);   
-    if(timerValue > 0 && showImages == true)
+    // set the x values
+    for(var i = 0; i < 500; i++)
     {
-            drawImages();
+        x[i] = initialX;
+        initialX += 10;
     }
-   // else if(timerValue > 0 && showImages == false)
+}
+
+function draw()
+{
+    background(120);
+    
+   // translate
+   translate(width/2-100, height/2-100);
+   r = random(255);
+   g = random(255);
+   b = random (255);
+    fill(r, g, b);
+    
+    for(var i = 0; i < x.length; i++)
+    {
+        // rotate
+        rotate(PI/movement);
+      //  square(x[i], 50,5);
+
+    }
+    // print out image array
+   // for(var i = 0; i < myImages.length; i++)
    // {
-        // don't show
-  //  }
-
-    if(timerValue == 0)
+       var number = random(myImages.length);
+    console.log(number);
+    console.log(floor(number));
+        image(myImages[floor(random(myImages.length))], 100, 100);
+            
+   // }
+    
+    // make it move
+    /*
+    if(movement > 0)
     {
-        timerValue = 5;
-        if(showImages == true)
-        {
-            showImages = false;
-        }
-        else
-        {
-            showImages = true;
-        }
-    }
-
-
-/*
-        else if(showImages == false)
-        {
-
-        }   
-        else
-        {
-           // showImages = true; 
-          // timerValue = 5;
-         //  showImages = false;
-        }    
-       
+        movement -= .01;
     }
     else
     {
-        //timerValue = 5;
-        showImages = true; 
-
+        movement = 10.0;
     }
-    */
+    */   
 
 }
 
-
-function drawImages()
+function timeIt()
 {
-    for(var i = 0; i < fishX.length; i++)
-    {
-        image(fishImg,fishX[i],10); 
-        image(tPainImg, tPainX[i], 10); 
-    }  
+
 }
-
-function timeIt() {
-    if (timerValue > 0) {   
-        timerValue--;
-    }
-
-   
-}
-
