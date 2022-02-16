@@ -17,4 +17,21 @@ class imageclass
     {
         return this.x;
     }
+    getY()
+    {
+        return this.y;
+    }
+    getW()
+    {
+        return this.w;
+    }
+    getH()
+    {
+        return this.h;
+    }
+
+    moveX(speed)
+    {
+        this.x += speed;
+    }
 }
