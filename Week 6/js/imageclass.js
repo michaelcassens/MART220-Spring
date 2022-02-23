@@ -34,4 +34,15 @@ class imageclass
     {
         this.x += speed;
     }
+
+    draw()
+    {
+        image(this.img,
+	    this.x, 
+	    this.y, 
+	    this.w,
+	    this.h);	
+    }
+
+    
 }
