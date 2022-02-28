@@ -1,10 +1,10 @@
-Idle (1).png
-Idle (2).png
-Idle (3).png
-Idle (4).png
-Idle (5).png
-Idle (6).png
-Idle (7).png
-Idle (8).png
-Idle (9).png
-Idle (10).png
+Idle1.png
+Idle2.png
+Idle3.png
+Idle4.png
+Idle5.png
+Idle6.png
+Idle7.png
+Idle8.png
+Idle9.png
+Idle10.png
