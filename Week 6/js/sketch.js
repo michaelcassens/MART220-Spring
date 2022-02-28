@@ -7,6 +7,8 @@ var imagesToDisplay = [];
 var imagesToDisplay2 = [];
 var staticImages = [];
 var imageClassObject;
+var myInterval, myInterval2;
+var myIntervals = [];
 function preload()
 {
 	// read in the file
@@ -50,17 +52,28 @@ function setup()
 	}
 
 
-
-	setInterval(changeAnimation, 500);
-	setInterval(changeAnimation2, 10);
+	myInterval = new intervalclass(i, imagesToDisplay, 100);
+	myIntervals[0] = myInterval;
+	myInterval = new intervalclass(0, imagesToDisplay2, 10);
+	myIntervals[1] = myInterval;
+	for(var g = 0; g < myIntervals.length; g++)
+	{
+		myIntervals[g].update();
+	}
+	//setInterval(changeAnimation, 500);
+	//setInterval(changeAnimation2, 10);
 }
 
 function draw(){
 	background(240);
 
-	imagesToDisplay[i].draw(); // idle array
-	imagesToDisplay2[k].draw();
-
+	//imagesToDisplay[i].draw(); // idle array
+	//imagesToDisplay2[myInterval2.getIndex()].draw();
+	for(var t = 0; t < myIntervals.length; t++)
+	{
+		myIntervals[t].getArrayName()[myIntervals[t].getIndex()].draw(); // idle array
+	}
+	
 	for(var m = 0; m < staticImages.length; m++)
 	{
 		staticImages[m].draw();

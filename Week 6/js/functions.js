@@ -1,5 +1,6 @@
-function changeAnimation(i, imagesToDisplay)
+/*function changeAnimation(i)
 {
+	console.log(i)
 	// this increments our frames to display in the animation
 	i+=1;
 	
@@ -10,10 +11,10 @@ function changeAnimation(i, imagesToDisplay)
 		i = 0;
 	
 	}
+	
+}*/
 
-}
-
-
+/*
 function changeAnimation2()
 {
 	// this increments our frames to display in the animation
@@ -27,4 +28,4 @@ function changeAnimation2()
 	}
 
 
-}
+}*/
