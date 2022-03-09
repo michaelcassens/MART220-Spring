@@ -16,14 +16,14 @@ function preload()
 function setup()
 {
 	createCanvas(displayWidth, displayHeight);
-	redhat = createSprite(100, 250);
+	redhat = createSprite(100, 250, 100,100);
 	
 	//redhat.addAnimation('idle','assets/redhat/' + idle[0],'assets/redhat/' + idle[1],'assets/redhat/' + idle[2],'assets/redhat/' + idle[3],'assets/redhat/' + idle[4],'assets/redhat/' + idle[5],'assets/redhat/' + idle[6],'assets/redhat/' + idle[7],'assets/redhat/' + idle[8]);
 	redhat.addAnimation('idle','assets/redhat/' + idle[0],'assets/redhat/' + idle[idle.length-1]);
 	redhat.addAnimation('run','assets/redhat/' + run[0],'assets/redhat/' + run[1],'assets/redhat/' + run[2],'assets/redhat/' + run[3],'assets/redhat/' + run[4],'assets/redhat/' + run[5],'assets/redhat/' + run[6],'assets/redhat/' + run[7],'assets/redhat/' + run[8]);
 	//redhat = loadAnimation('assets/redhat/' + idle[0],'assets/redhat/' + idle[1],'assets/redhat/' + idle[2],'assets/redhat/' + idle[3],'assets/redhat/' + idle[4],'assets/redhat/' + idle[5],'assets/redhat/' + idle[6],'assets/redhat/' + idle[7],'assets/redhat/' + idle[8]);
 	//redhat2 = loadAnimation('assets/redhat/' + run[0],'assets/redhat/' + run[1],'assets/redhat/' + run[2],'assets/redhat/' + run[3],'assets/redhat/' + run[4],'assets/redhat/' + run[5],'assets/redhat/' + run[6],'assets/redhat/' + run[7],'assets/redhat/' + run[8]);
-	rock = createSprite(700, 300);
+	rock = createSprite(700, 300, 100,100);
     //compact way to add an image
     rock.addImage(loadImage('assets/color.jpeg'));
 }
