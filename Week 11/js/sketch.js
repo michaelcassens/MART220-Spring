@@ -17,7 +17,6 @@ function setup()
 {
     createCanvas(1080,768, WEBGL);
     myModelObject = new modelClass(spiderX, spiderY, rotateSpeed, myModel, myTexture);
-
 }
 /* this function is called continuously
     while the sketch is open in the browser
@@ -74,5 +73,3 @@ function mouseDragged()
     myModelObject.updateY(spiderY);
    // console.log(spiderX);
 }
-
-
